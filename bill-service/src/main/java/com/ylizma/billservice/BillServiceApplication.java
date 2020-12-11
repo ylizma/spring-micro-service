@@ -13,17 +13,8 @@ import org.springframework.context.annotation.Bean;
 @EnableFeignClients
 public class BillServiceApplication  {
 
-
     public static void main(String[] args) {
         SpringApplication.run(BillServiceApplication.class, args);
-    }
-
-    @Bean
-    CommandLineRunner run(ProductRestClient client){
-        return args -> {
-            System.out.println(client.findProductById(2L));
-            System.out.println("hiii");
-        };
     }
 
 }
