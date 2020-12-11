@@ -5,10 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Transient;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
@@ -19,12 +17,13 @@ import java.util.Date;
 public class Bill  {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private Date date;
 
     @OneToMany(mappedBy = "bill")
-    private Collection<ProductItem> productItems;
+    private Collection<ProductItem> productItems = new ArrayList<>();;
 
     private long customerId;
 
