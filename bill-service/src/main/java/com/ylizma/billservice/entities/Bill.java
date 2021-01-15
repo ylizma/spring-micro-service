@@ -23,7 +23,7 @@ public class Bill  {
     private Date date;
 
     @OneToMany(mappedBy = "bill")
-    private Collection<ProductItem> productItems = new ArrayList<>();;
+    private Collection<ProductItem> productItems = new ArrayList<>();
 
     private long customerId;
 

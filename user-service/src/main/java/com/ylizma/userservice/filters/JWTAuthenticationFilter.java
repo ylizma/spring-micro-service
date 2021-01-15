@@ -22,7 +22,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static org.springframework.security.config.Elements.JWT;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private final String SECRET_KEY = "2a7UQi3e9ZsmTExTxvynAPa69EXgvKjTzH2ZOolLHO2vPjBZbBiUHpgXJzyHFvp";

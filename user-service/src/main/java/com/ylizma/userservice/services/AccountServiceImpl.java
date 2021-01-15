@@ -10,8 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service
 @Transactional
+@Service
 public class AccountServiceImpl implements AccountService {
 
     private final UserAppRepository userAppRepository;
@@ -38,14 +38,14 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public void addRoleToUser(String username, String roleName) {
         RoleApp role = roleAppRepository.findByName(roleName);
-        UserApp user = userAppRepository.findByUsername(username);
+        UserApp user = userAppRepository.findByUsername(username).get();
         user.getRoles().add(role);
         userAppRepository.save(user);
     }
 
     @Override
     public UserApp loadUserByUsername(String username) {
-        return userAppRepository.findByUsername(username);
+        return userAppRepository.findByUsername(username).get();
     }
 
     @Override

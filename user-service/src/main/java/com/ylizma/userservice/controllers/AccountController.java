@@ -47,8 +47,9 @@ public class AccountController {
     }
 
     @GetMapping("/roles")
-    @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
+//    @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
     public ResponseEntity<Object> getAllRoles() {
+        System.out.println("/roles");
         return ResponseEntity.ok(accountService.allRoles());
     }
 }
